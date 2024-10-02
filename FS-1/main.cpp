@@ -12,7 +12,7 @@ int main(int argc, char **argv){
 		int fd = open(argv[1], O_RDONLY);
 		if(fd == -1)
 		{
-			perror("oshibka");
+			std::cout<<"Error opening file"<<std::endl;
 			return errno;
 		}
 		ssize_t bytes_read;
@@ -22,18 +22,17 @@ int main(int argc, char **argv){
 		}
     		if (bytes_read == -1) 
 		{
-        		perror("Ошибка при чтении файла");
+			std::cout<<"Ошибка при чтении файла"<<std::endl;
 			close(fd);
     			return errno;
 		}
-
-    		buffer[bytes_read] = '\0';
-    		std::cout <<"FILE:" << buffer;
  		close(fd);
+		return 0;
 	}
 	else
 	{
 		std::cout<<"Invalid arguments"<<std::endl;
+		return 1;
 	}
 }
 
