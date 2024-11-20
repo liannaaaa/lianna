@@ -1,0 +1,4 @@
+Mutex time: 0.0236502seconds
+Spin time: 2.0963 seconds
+Semaphore time: 0.07799 seconds
+
