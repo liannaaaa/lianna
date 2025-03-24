@@ -72,10 +72,10 @@ int main() {
           exit(errno);
       }
       pthread_t th;
-      struct arguments argg;
+      struct args argg;
       argg.client_socket = client_socket;
       argg.client_address = client_address;
-      if((pthread_create(&th, nullptr, handle_client, (void*)&argg)) != 0) {
+      if((pthread_create(&th, nullptr, handle, (void*)&argg)) != 0) {
           perror("error creating threads");
           exit(errno);
           close(server_socket);
